@@ -2,20 +2,20 @@ import express from 'express';
 import { validateSchema, querySchema } from '../helpers/validation.js';
 import {
   createUser,
-  getUsers,
   getUser,
+  getUsers,
   deleteUser,
   updateUser,
   getUserAutoSuggest,
-} from '../controllers/users.js';
+} from '../controllers/user-controller.js';
 
 const router = express.Router();
 
-router.get('/', getUsers);
+router.get('/getUsers', getUsers);
 
 router.get('/users-auto-suggest', getUserAutoSuggest);
 
-router.post('/', validateSchema(querySchema), createUser);
+router.post('/addUser', validateSchema(querySchema), createUser);
 
 router.get('/:id', getUser);
 
