@@ -2,10 +2,10 @@ import UserService from '../service/user-service.js';
 
 const us = new UserService();
 
-export const getUsers= async (req, res) => {
+export const getUsers = async (req, res) => {
   const users = await us.GetUsers();
-  return res.status(200).json(users)
-}
+  return res.status(200).json(users);
+};
 
 export const createUser = async (req, res) => {
   const user = await us.Create(req.body);
@@ -16,7 +16,7 @@ export const getUser = async (req, res) => {
   const { id } = req.params;
   const foundUser = await us.Get(id);
   if (!foundUser) {
-    res.status(404).json({ message: `Cannot find user with this ${id} ` });
+    res.status(404).json({ message: `Cannot find user with this ${id}` });
   } else {
     res.status(200).json(foundUser);
   }
@@ -47,6 +47,6 @@ export const updateUser = async (req, res) => {
   const user = await us.Update(req.body, id);
   if (!user) {
     res.status(404).json({ message: `User with id ${id} not found` });
-}
-  res.status(200).json(`User with id ${id} updated successfully`)
+  }
+  res.status(200).json(`User with id ${id} updated successfully`);
 };

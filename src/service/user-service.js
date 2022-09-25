@@ -1,12 +1,12 @@
 import crypto from 'crypto'
 import Op from "sequelize";
-import { User } from "../models/user-model.js";
+import User from "../models/user-model.js";
 
 export default class UserService {
-  async Create(user) {
+  async Create (user) {
     const userWithId = {
       ...user,
-      id : crypto.randomUUID()
+      id : crypto.randomUUID();
     };
     await User.create(userWithId);
     return userWithId;
@@ -44,7 +44,6 @@ export default class UserService {
         id: userId,
       },
     });
-
     return user;
   }
 
