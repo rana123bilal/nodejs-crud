@@ -1,4 +1,4 @@
-import UserService from '../service/user-service.js';
+import UserService from "../service/user-service.js";
 
 const us = new UserService();
 
@@ -9,7 +9,9 @@ export const getUsers = async (req, res) => {
 
 export const createUser = async (req, res) => {
   const user = await us.Create(req.body);
-  res.status(201).json(`User with the name ${user.login} added to the database`);
+  res
+    .status(201)
+    .json(`User with the name ${user.login} added to the database`);
 };
 
 export const getUser = async (req, res) => {
@@ -27,7 +29,7 @@ export const getUserAutoSuggest = async (req, res) => {
   const usersResult = await us.GetSuggested(loginSubString, limit);
 
   if (!usersResult.length) {
-    res.status(404).json({ message: 'No users were found' });
+    res.status(404).json({ message: "No users were found" });
   } else {
     res.status(200).json(usersResult);
   }
@@ -53,17 +55,15 @@ export const updateUser = async (req, res) => {
 
 export const addUsersToGroup = async (req, res) => {
   const { group_id, user_ids } = req.body;
-  console.log('req.body', req.body)
-
   if (!group_id) {
-      res.status(404).json({ message: `Group with id ${group_id} not found` });
+    res.status(404).json({ message: `Group with id ${group_id} not found` });
   }
 
   if (!user_ids.length) {
-      res.status(404).json({ message: 'Please provide user ids which you want to add to the group' });
+    res.status(404).json({
+      message: "Please provide user ids which you want to add to the group",
+    });
   }
- const response =  await us.AddUsersToGroup(group_id, user_ids);
- console.log('response', response)
+  await us.AddUsersToGroup(group_id, user_ids);
   res.status(204).send();
-
 };

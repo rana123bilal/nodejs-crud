@@ -1,18 +1,22 @@
-import Sequelize from 'sequelize';
-import sequelize from '../database.js';
+import Sequelize from "sequelize";
+import sequelize from "../database.js";
 
-const User = sequelize.define('user', {
-  id: {
-    type: Sequelize.STRING,
-    primaryKey: true,
+const User = sequelize.define(
+  "user",
+  {
+    id: {
+      type: Sequelize.STRING,
+      primaryKey: true,
+    },
+    login: Sequelize.STRING,
+    age: Sequelize.NUMBER,
+    password: Sequelize.STRING,
+    isDeleted: Sequelize.BOOLEAN,
   },
-  login: Sequelize.STRING,
-  age: Sequelize.NUMBER,
-  password: Sequelize.STRING,
-  isDeleted: Sequelize.BOOLEAN,
-}, {
-  timestamps: false,
-  tableName: 'user',
-});
+  {
+    timestamps: false,
+    tableName: "user",
+  }
+);
 
 export default User;

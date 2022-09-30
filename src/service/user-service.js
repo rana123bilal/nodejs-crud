@@ -1,10 +1,10 @@
-import crypto from 'crypto';
-import Op from 'sequelize';
-import User from '../models/user-model.js';
-import UserGroups from '../models/userGroupsModel.js';
+import crypto from "crypto";
+import Op from "sequelize";
+import User from "../models/user-model.js";
+import UserGroups from "../models/userGroupsModel.js";
 
 export default class UserService {
-  async Create (user) {
+  async Create(user) {
     const userWithId = {
       ...user,
       id: crypto.randomUUID(),
@@ -56,16 +56,18 @@ export default class UserService {
         id: userId,
       },
     });
-
     return user;
   }
 
-  async AddUsersToGroup(groupId, userIds) {
-    userIds.forEach(async v => {
-        await UserGroups.create({ group_id: groupId, user_id: v });
+  async AddUsersToGroup(group_id, user_ids) {
+    let res;
+    user_ids.forEach(async (v) => {
+      res = await UserGroups.create({
+        id: crypto.randomUUID(),
+        groupId: group_id,
+        userId: v,
+      });
     });
-
-    return userIds;
+    return user_ids;
+  }
 }
-}
-
