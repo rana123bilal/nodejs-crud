@@ -1,4 +1,4 @@
-CREATE TABLE Users (
+CREATE TABLE user (
     id TEXT,
     login TEXT,
     password TEXT,

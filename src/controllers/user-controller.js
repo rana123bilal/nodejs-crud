@@ -39,7 +39,7 @@ export const deleteUser = async (req, res) => {
   if (!user) {
     res.status(404).json({ message: `User with id ${id} not found` });
   }
-  res.status(204).json({ message: `User with id ${id} not found` });
+  res.status(204).json({ message: `User with id ${id} is delted` });
 };
 
 export const updateUser = async (req, res) => {
@@ -49,4 +49,21 @@ export const updateUser = async (req, res) => {
     res.status(404).json({ message: `User with id ${id} not found` });
   }
   res.status(200).json(`User with id ${id} updated successfully`);
+};
+
+export const addUsersToGroup = async (req, res) => {
+  const { group_id, user_ids } = req.body;
+  console.log('req.body', req.body)
+
+  if (!group_id) {
+      res.status(404).json({ message: `Group with id ${group_id} not found` });
+  }
+
+  if (!user_ids.length) {
+      res.status(404).json({ message: 'Please provide user ids which you want to add to the group' });
+  }
+ const response =  await us.AddUsersToGroup(group_id, user_ids);
+ console.log('response', response)
+  res.status(204).send();
+
 };

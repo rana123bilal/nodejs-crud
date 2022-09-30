@@ -6,6 +6,7 @@ import {
   getUsers,
   deleteUser,
   updateUser,
+  addUsersToGroup,
   getUserAutoSuggest,
 } from '../controllers/user-controller.js';
 
@@ -20,6 +21,8 @@ router.post('/addUser', validateSchema(querySchema), createUser);
 router.get('/:id', getUser);
 
 router.delete('/:id', deleteUser);
+
+router.post('/users-to-group/', addUsersToGroup);
 
 router.patch('/:id', validateSchema(querySchema), updateUser);
 
