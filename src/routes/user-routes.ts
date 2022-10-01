@@ -1,5 +1,5 @@
 import express from 'express';
-import { validateSchema, querySchema } from '../helpers/validation.js';
+import { validateSchema, querySchema } from '../helpers/validation';
 import {
   createUser,
   getUser,
@@ -7,14 +7,11 @@ import {
   deleteUser,
   updateUser,
   addUsersToGroup,
-  getUserAutoSuggest,
-} from '../controllers/user-controller.js';
+} from '../controllers/user-controller';
 
 const router = express.Router();
 
 router.get('/getUsers', getUsers);
-
-router.get('/users-auto-suggest', getUserAutoSuggest);
 
 router.post('/addUser', validateSchema(querySchema), createUser);
 

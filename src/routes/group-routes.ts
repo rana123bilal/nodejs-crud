@@ -5,7 +5,7 @@ import {
   getAllGroups,
   deleteGroup,
   updateGroup,
-} from "../controllers/group-controller.js";
+} from "../controllers/group-controller";
 
 const router = express.Router();
 

@@ -1,5 +1,5 @@
 import Sequelize from "sequelize";
-import sequelize from "../database.js";
+import sequelize from "../database";
 
 const User = sequelize.define(
   "user",

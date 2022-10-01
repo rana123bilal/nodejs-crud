@@ -1,10 +1,10 @@
 import crypto from "crypto";
-import Op from "sequelize";
-import User from "../models/user-model.js";
-import UserGroups from "../models/userGroupsModel.js";
+import User from "../models/user-model";
+import UserGroups from "../models/userGroupsModel";
+
 
 export default class UserService {
-  async Create(user) {
+  async Create(user:any) {
     const userWithId = {
       ...user,
       id: crypto.randomUUID(),
@@ -13,7 +13,7 @@ export default class UserService {
     return userWithId;
   }
 
-  async Get(id) {
+  async Get(id:string) {
     const user = await User.findByPk(id);
     return user;
   }
@@ -23,22 +23,9 @@ export default class UserService {
     return users;
   }
 
-  async GetSuggested(loginSubstr, limit) {
-    const users = await User.findAll({
-      where: {
-        login: {
-          [Op.startsWith]: loginSubstr || "",
-        },
-      },
-      order: [["login", "ASC"]],
-      limit: Number(limit) || 10,
-    });
 
-    return users;
-  }
-
-  async Update(userBody, id) {
-    const user = await User.findByPk(id);
+  async Update(userBody:any, id: string) {
+    const user:any = await User.findByPk(id);
     const userId = user.id;
     await User.update(userBody, {
       where: {
@@ -48,7 +35,7 @@ export default class UserService {
     return user;
   }
 
-  async Delete(id) {
+  async Delete(id : string) {
     const userId = id;
     const user = await User.findByPk(id);
     await User.destroy({
@@ -59,13 +46,13 @@ export default class UserService {
     return user;
   }
 
-  async AddUsersToGroup(group_id, user_ids) {
+  async AddUsersToGroup(group_id : string, user_ids : string[]) {
     let res;
-    user_ids.forEach(async (v) => {
+    user_ids.forEach(async (uid : string) => {
       res = await UserGroups.create({
         id: crypto.randomUUID(),
         groupId: group_id,
-        userId: v,
+        userId: uid,
       });
     });
     return user_ids;
