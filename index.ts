@@ -1,9 +1,9 @@
-import express from "express";
+import express, {Application, Request, Response, NextFunction} from 'express';
 import bodyParser from "body-parser";
-import usersRoutes from "./src/routes/user-routes.js";
-import groupRoutes from "./src/routes/group-routes.js";
+import usersRoutes from "./src/routes/user-routes";
+import groupRoutes from "./src/routes/group-routes";
 
-const app = express();
+const app: Application = express();
 const PORT = 8000;
 
 app.use(bodyParser.json());
@@ -12,7 +12,7 @@ app.use("/users", usersRoutes);
 
 app.use("/groups", groupRoutes);
 
-app.get("/", (req, res) => {
+app.get("/", (req: Request, res: Response) => {
   res.send("Hello from Homepage");
 });
 
