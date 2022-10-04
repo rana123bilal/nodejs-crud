@@ -8,19 +8,20 @@ import {
   updateUser,
   addUsersToGroup,
 } from '../controllers/user-controller';
+import {executionLogger} from '../logger';
 
 const router = express.Router();
 
-router.get('/getUsers', getUsers);
+router.get('/getUsers', executionLogger(getUsers));
 
-router.post('/addUser', validateSchema(querySchema), createUser);
+router.post('/addUser', validateSchema(querySchema), executionLogger(createUser));
 
-router.get('/:id', getUser);
+router.get('/:id', executionLogger(getUser));
 
-router.delete('/:id', deleteUser);
+router.delete('/:id', executionLogger(deleteUser));
 
-router.post('/users-to-group/', addUsersToGroup);
+router.post('/users-to-group/', executionLogger(addUsersToGroup));
 
-router.patch('/:id', validateSchema(querySchema), updateUser);
+router.patch('/:id', validateSchema(querySchema), executionLogger(updateUser));
 
 export default router;
