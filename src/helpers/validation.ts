@@ -1,5 +1,5 @@
 import Joi from "joi";
-import express, { Request, Response, NextFunction} from 'express';
+import { Request, Response, NextFunction} from 'express';
 
 
 export const querySchema = Joi.object({

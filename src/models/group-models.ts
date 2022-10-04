@@ -1,6 +1,8 @@
 import  Sequelize from "sequelize";
 import sequelize from "../database";
 
+
+
 const Group = sequelize.define(
   "group",
   {
