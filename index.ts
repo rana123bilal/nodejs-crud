@@ -1,18 +1,19 @@
-import express, {Application, Request, Response, NextFunction} from 'express';
+import express, {Application, Request, Response} from 'express';
 import bodyParser from "body-parser";
+import corsOptions from './src/cors/Cors';
 import usersRoutes from "./src/routes/user-routes";
 import groupRoutes from "./src/routes/group-routes";
 import morgan from 'morgan';
 import {logger} from './src/logger';
 
 const app: Application = express();
+app.use(corsOptions)
 const PORT = 8000;
-
 app.use(bodyParser.json());
 
 const myStream = {
-  write: (text) => {
-      logger.info(text);
+  write: (text : any) => {
+    logger.info(text);
   }
 };
 

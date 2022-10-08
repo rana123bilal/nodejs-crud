@@ -23,23 +23,15 @@ class GroupService {
   }
 
   async Update(groupBody:any, id:string) {
-    const group:any = await Group.findByPk(id);
-    const groupId = group.id;
-    await Group.update(groupBody, {
-      where: {
-        id: groupId,
-      },
+   const group =  await Group.update(groupBody, {
+      where: {id},
     });
-    return group;
+   return group;
   }
 
   async Delete(id:string) {
-    const groupId = id;
-    const group = await Group.findByPk(id);
-    await Group.destroy({
-      where: {
-        id: groupId,
-      },
+   const group = await Group.destroy({
+      where: {id},
       force: true,
     });
     return group;

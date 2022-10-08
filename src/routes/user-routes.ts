@@ -1,5 +1,9 @@
-import express from 'express';
-import { validateSchema, querySchema } from '../helpers/validation';
+import express from "express";
+import {
+  validateSchema,
+  querySchema,
+  usersGroupSchema,
+} from "../helpers/validationUtils";
 import {
   createUser,
   getUser,
@@ -7,21 +11,29 @@ import {
   deleteUser,
   updateUser,
   addUsersToGroup,
-} from '../controllers/user-controller';
-import {executionLogger} from '../logger';
+  login_user,
+} from "../controllers/user-controller";
+import { executionLogger } from "../logger";
+import { verifyToken } from "../helpers/requestValidatorUtils";
 
 const router = express.Router();
 
-router.get('/getUsers', executionLogger(getUsers));
+router.get("/getUsers", verifyToken, executionLogger(getUsers));
 
-router.post('/addUser', validateSchema(querySchema), executionLogger(createUser));
+router.post("/addUser", validateSchema(querySchema), executionLogger(createUser));
 
-router.get('/:id', executionLogger(getUser));
+router.get("/:id", executionLogger(getUser));
 
-router.delete('/:id', executionLogger(deleteUser));
+router.post("/signin", executionLogger(login_user));
 
-router.post('/users-to-group/', executionLogger(addUsersToGroup));
+router.delete("/:id", executionLogger(deleteUser));
 
-router.patch('/:id', validateSchema(querySchema), executionLogger(updateUser));
+router.post(
+  "/users-to-group/",
+  validateSchema(usersGroupSchema),
+  executionLogger(addUsersToGroup)
+);
+
+router.patch("/:id", validateSchema(querySchema), executionLogger(updateUser));
 
 export default router;

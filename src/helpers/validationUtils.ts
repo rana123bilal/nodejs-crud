@@ -10,6 +10,11 @@ export const querySchema = Joi.object({
   age: Joi.number().min(4).max(130).required(),
 });
 
+export const usersGroupSchema = Joi.object({
+  group_id : Joi.string().required(),
+  user_ids : Joi.array().items(Joi.string().required())
+})
+
 export function errorResponse(schemaErrors : any) {
   const errors = schemaErrors.map((error : any) => {
     const { path, message } = error;
@@ -33,4 +38,12 @@ export function validateSchema(schema : any) {
       next();
     }
   };
+}
+
+export function validatePassword(user, password){
+  if(password === user.password){
+    console.log('inhere')
+    return true;
+  }
+  return false;
 }
