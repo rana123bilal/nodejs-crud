@@ -2,7 +2,7 @@ import crypto from "crypto";
 import Group from "../models/group-models";
 
 class GroupService {
-  async Create(group:any) {
+  async Create(group: any) {
     const { name, permissions } = group;
     const groupWithId = {
       name,
@@ -13,7 +13,7 @@ class GroupService {
     return groupWithId;
   }
 
-  async Get(id:string) {
+  async Get(id: string) {
     const group = await Group.findByPk(id);
     return group;
   }
@@ -22,16 +22,16 @@ class GroupService {
     return groups;
   }
 
-  async Update(groupBody:any, id:string) {
-   const group =  await Group.update(groupBody, {
-      where: {id},
+  async Update(groupBody: any, id: string) {
+    const group = await Group.update(groupBody, {
+      where: { id },
     });
-   return group;
+    return group;
   }
 
-  async Delete(id:string) {
-   const group = await Group.destroy({
-      where: {id},
+  async Delete(id: string) {
+    const group = await Group.destroy({
+      where: { id },
       force: true,
     });
     return group;

@@ -6,15 +6,15 @@ import {
   deleteGroup,
   updateGroup,
 } from "../controllers/group-controller";
-import {executionLogger} from '../logger';
+import { executionLogger } from "../logger";
 
 const router = express.Router();
 
-router.get("/getgroups",executionLogger(getAllGroups));
+router.get("/getgroups", executionLogger(getAllGroups));
 
 router.post("/addgroup", executionLogger(createGroup));
 
-router.get("/:id",executionLogger(getGroup));
+router.get("/:id", executionLogger(getGroup));
 
 router.delete("/:id", executionLogger(deleteGroup));
 
