@@ -148,3 +148,59 @@
 {"level":"info","message":"::1 - - [08/Oct/2022:15:00:04 +0000] \"GET /groups/getgroups HTTP/1.1\" 200 88 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
 {"level":"info","message":"::1 - - [08/Oct/2022:23:07:59 +0000] \"GET /groups/getgroups HTTP/1.1\" 200 88 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
 {"level":"info","message":"::1 - - [08/Oct/2022:23:08:11 +0000] \"GET /users/getusers HTTP/1.1\" 200 109 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:29:55 +0000] \"GET /users/getusers HTTP/1.1\" 200 109 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:31:03 +0000] \"GET /groups/getgroups HTTP/1.1\" 200 88 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:32:25 +0000] \"GET /users/signin HTTP/1.1\" 404 47 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:37:17 +0000] \"GET /users/getusers HTTP/1.1\" 200 109 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:37:41 +0000] \"POST /users/signin HTTP/1.1\" 503 35 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"error","message":"Unhandled Rejection","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:37:48 +0000] \"POST /users/signin HTTP/1.1\" 503 35 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"error","message":"Unhandled Rejection","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:38:04 +0000] \"GET /users/getusers HTTP/1.1\" 200 109 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:38:25 +0000] \"GET /users/signin HTTP/1.1\" 404 47 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:38:28 +0000] \"POST /users/signin HTTP/1.1\" 503 35 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"error","message":"Unhandled Rejection","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:38:36 +0000] \"POST /users/signin HTTP/1.1\" 503 35 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"error","message":"Unhandled Rejection","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:38:47 +0000] \"POST /users/signin HTTP/1.1\" 200 279 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:55:05 +0000] \"POST /users/signin HTTP/1.1\" 503 35 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"error","message":"Unhandled Rejection","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:55:11 +0000] \"POST /users/signin HTTP/1.1\" 200 279 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:55:15 +0000] \"POST /users/signin HTTP/1.1\" 503 35 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"error","message":"Unhandled Rejection","service":"user-service"}
+{"level":"error","message":"POST [object Object] WHERE parameter \"login\" has invalid \"undefined\" value","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:55:20 +0000] \"POST /users/signin HTTP/1.1\" 503 71 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:57:46 +0000] \"POST /users/signin HTTP/1.1\" 200 279 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"error","message":"POST [object Object] WHERE parameter \"login\" has invalid \"undefined\" value","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:58:04 +0000] \"POST /users/signin HTTP/1.1\" 503 71 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:58:23 +0000] \"POST /users/signin HTTP/1.1\" 404 47 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:14:58:43 +0000] \"POST /users/signin HTTP/1.1\" 200 279 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:15:03:15 +0000] \"POST /users/signin HTTP/1.1\" 200 279 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:15:03:21 +0000] \"GET /users/signin HTTP/1.1\" 404 47 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:15:03:28 +0000] \"POST /users/signin HTTP/1.1\" 200 279 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [10/Oct/2022:15:04:46 +0000] \"POST /users/signin HTTP/1.1\" 200 279 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [11/Oct/2022:14:26:05 +0000] \"GET /users/getusers HTTP/1.1\" 403 23 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [11/Oct/2022:14:26:41 +0000] \"GET /users/getusers HTTP/1.1\" 200 109 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [11/Oct/2022:14:31:13 +0000] \"POST /users/signin HTTP/1.1\" 200 279 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"error","message":"GET [object Object] logger_1.logger.alert is not a function","service":"user-service"}
+{"level":"info","message":"::1 - - [11/Oct/2022:14:35:01 +0000] \"GET /users/getusers HTTP/1.1\" 503 53 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [11/Oct/2022:14:50:40 +0000] \"GET /users/36302bb6-252e-4c87-864a-a94a3aca1758 HTTP/1.1\" 200 107 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"GET","service":"user-service"}
+{"level":"info","message":"::1 - - [11/Oct/2022:15:49:09 +0000] \"GET /users/getusers HTTP/1.1\" 200 109 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"GET [object Object]","service":"user-service"}
+{"level":"info","message":"::1 - - [12/Oct/2022:06:26:06 +0000] \"GET /users/getusers HTTP/1.1\" 200 109 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [12/Oct/2022:06:26:18 +0000] \"GET /users/signin HTTP/1.1\" 404 47 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"POST [object Object]","service":"user-service"}
+{"level":"info","message":"::1 - - [12/Oct/2022:06:26:21 +0000] \"POST /users/signin HTTP/1.1\" 200 279 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"POST [object Object]","service":"user-service"}
+{"level":"info","message":"::1 - - [12/Oct/2022:06:38:54 +0000] \"POST /users/signin HTTP/1.1\" 200 279 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"POST [object Object]","service":"user-service"}
+{"level":"info","message":"::1 - - [12/Oct/2022:06:40:38 +0000] \"POST /users/signin HTTP/1.1\" 200 279 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"POST [object Object]","service":"user-service"}
+{"level":"info","message":"::1 - - [12/Oct/2022:06:55:49 +0000] \"POST /users/signin HTTP/1.1\" 200 279 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [12/Oct/2022:06:55:54 +0000] \"POST /users/signind HTTP/1.1\" 500 1393 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [12/Oct/2022:06:58:29 +0000] \"POST /users/signind HTTP/1.1\" 404 153 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [12/Oct/2022:06:58:46 +0000] \"POST /users/signind HTTP/1.1\" 404 153 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"::1 - - [12/Oct/2022:06:58:52 +0000] \"POST /users/signindd HTTP/1.1\" 404 154 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
+{"level":"info","message":"POST [object Object]","service":"user-service"}
+{"level":"info","message":"::1 - - [12/Oct/2022:06:59:01 +0000] \"POST /users/signin HTTP/1.1\" 200 279 \"-\" \"PostmanRuntime/7.29.2\"\n","service":"user-service"}
